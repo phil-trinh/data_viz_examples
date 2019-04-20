@@ -1,2 +1,7 @@
-# data_viz_examples
-Portfolio of Data Visualizations
+# Data Visualization Examples
+Portfolio of Data Visualizations in Python & Tableau
+
+Packages Used
+* Plotly
+* Seaborn
+* Tableau
