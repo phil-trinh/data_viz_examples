@@ -1,0 +1,8 @@
+# SF Housing Rental Deals
+Data given was a scrape of Craigslist listings of housing rentals in the Bay Area and Los Angeles. Craigslist is dirty and so I had to clean and make assumptions about the validity of the data. Based on the housing rentals, I wanted to see what would be a roughly good deal or not to rent in the San Francisco/Bay Area.
+
+I fit a linear regression model  on the location, square footage, number of bedrooms & bathrooms. If pets allowed and garage availability are also taken into consideration. Based on this regression model, I predicted prices for each listing. I filtered postings that are not deleted and only within the Bay Area longitude/latitude bounding box. If actual prices are above the regression predicted price, the marker turns red and actual prices below are blue.
+
+At a quick glance, downtown San Francisco has the greatest density of red, or high-rent locations, in the Bay Area. The farther and residential areas look to be more reasonable in rent prices. Some other clusters of high-rent locations are in Pleasanton, the inner part of South Bay closest to the Bay, and parts of Berkeley.
+
+I chose the red and blue scale color bar for easy interpretation of high and low values, along with a default zoom to the San Francisco/Bay Area. The plot is an interactive Plotly plot so users can zoom in and out along with hovering their cursor over any point and see the listing’s information. This would help users to determine how good of a deal each listing is in comparison to the rest of the Bay Area listings.
