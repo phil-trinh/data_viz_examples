@@ -2,6 +2,7 @@
 Portfolio of Data Visualizations in Python & Tableau
 
 Packages Used
-* Plotly
-* Seaborn
-* Tableau
+* [Bokeh](Bokeh/)
+* [Plotly](Plotly/)
+* [Seaborn](Seaborn/)
+* [Tableau](Tableau/)
