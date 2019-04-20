@@ -10,4 +10,4 @@ The bar plot (bottom left_ and map (right) were quantitative and qualitative plo
 
 From scrolling through all the years, Germany has always been at the top of the list, being the biggest contributor to CO2 emissions through fuel combustion. Yet, after 2012, all countries have been on a trend to reducing their carbon footprint. I used the color red to denote the darker the red, the worse the amount of CO2 is. Also, by clicking on a country either on the map or on the bar chart will filter the data to that country, adding another layer of interaction for the user.
 
-Credit to Colleague Tyler Ursuy for inspiration on the color scheme and title. Some visual enhancements are a combination of his story telling and my dashboard.
+Credit to Colleague Tyler Ursuy for inspiration on the color scheme and title. Some visual enhancements are a combination of his story telling and my multi-plot dashboard.
