@@ -1,8 +1,20 @@
-# SF Housing Rental Deals
-Data given was a scrape of Craigslist listings of housing rentals in the Bay Area and Los Angeles. Craigslist is dirty and so I had to clean and make assumptions about the validity of the data. Based on the housing rentals, I wanted to see what would be a roughly good deal or not to rent in the San Francisco/Bay Area.
+# Compromised Computers
+This puzzle comes from Dr. Chiara Sabatti at Stanford University as a summary of some real network traffic data from the past. The dataset has ~21K rows and covers 10 local workstation IPs over a three month period. Half of these local IPs were compromised at some point during this period and became members of various botnets. Can we discover when a compromise has occurred by a change in the pattern of communication?
 
-I fit a linear regression model  on the location, square footage, number of bedrooms & bathrooms. If pets allowed and garage availability are also taken into consideration. Based on this regression model, I predicted prices for each listing. I filtered postings that are not deleted and only within the Bay Area longitude/latitude bounding box. If actual prices are above the regression predicted price, the marker turns red and actual prices below are blue.
+Each row consists of four columns:  
+date: yyyy-mm-dd (from 2006-07-01 through 2006-09-30)  
+l_ipn: local IP (coded as an integer from 0-9)  
+r_asn: remote ASN (an integer which identifies the remote ISP)  
+f: flows (count of connnections for that day)
 
-At a quick glance, downtown San Francisco has the greatest density of red, or high-rent locations, in the Bay Area. The farther and residential areas look to be more reasonable in rent prices. Some other clusters of high-rent locations are in Pleasanton, the inner part of South Bay closest to the Bay, and parts of Berkeley.
+Reports of "odd" activity or suspicions about a machine's behavior triggered investigations on the following days (although the machine might have been compromised earlier)
 
-I chose the red and blue scale color bar for easy interpretation of high and low values, along with a default zoom to the San Francisco/Bay Area. The plot is an interactive Plotly plot so users can zoom in and out along with hovering their cursor over any point and see the listing’s information. This would help users to determine how good of a deal each listing is in comparison to the rest of the Bay Area listings.
+**Date : IP**  
+08-24 : 1  
+09-04 : 5  
+09-18 : 4  
+09-26 : 3, 6  
+
+In finding abnormal internet traffic, I figured box plots would be the best choice as any major outliers are distinguishable. For each compromised computer IP, [1, 3, 4, 5, 6], I aggregated the mean number of connections per day together since means are susceptive to outliers. The box plot has the hover info to be the date of that value, so the max values will more likely to be the time that the compromised computer. The max values are either on or before the date of investigation specified above.
+
+I chose to highlight the suspected outliers (in bold outlines) for each box plot to show these were other times that the computer could be compromised as well, since they are out of the inner distribution of the dataset.
